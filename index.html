@@ -45,7 +45,10 @@
                 divs.forEach((div)=> {
                     div.addEventListener('mouseover',function() {
                        div.style.backgroundColor = "black";
-                    })                 
+                    })
+                    div.addEventListener('touchmove',function() {
+                       div.style.backgroundColor = "black";
+                    })
                 })
             
             const button = document.querySelector('button');
