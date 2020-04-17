@@ -17,11 +17,7 @@
     </body>
     <script>
         let n=prompt("Enter the number of row and columns required", "");
-        let rowsAndColumns = "";
-    
-            for(let i=1;i<=n;i++){
-                rowsAndColumns = "repeat("+i+",auto)";
-            }
+        let rowsAndColumns = "repeat("+i+",auto)";
     
             const divMain = document.querySelector("#grid");
             divMain.style.display="grid";
