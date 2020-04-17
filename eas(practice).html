@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        button{
+            position: absolute;
+            left: 50%;
+            width: 100px;
+            height: 100px;
+            margin-left: -50px;
+            top: 5%;
+            font-size: large;
+        }
+    </style>
+    <body>
+        <button>Clear <br>Screen</button>
+        <div id="grid"></div>
+    </body>
+    <script>
+        let n=prompt("Enter the number of row and columns required", "");
+        let rowsAndColumns = "";
+    
+            for(let i=1;i<=n;i++){
+                rowsAndColumns = "repeat("+i+",auto)";
+            }
+    
+            const divMain = document.querySelector("#grid");
+            divMain.style.display="grid";
+            divMain.style.gridTemplateRows = rowsAndColumns;
+            divMain.style.gridTemplateColumns = rowsAndColumns;
+            divMain.style.position="absolute";
+            divMain.style.height = "600px";
+            divMain.style.width = "600px";
+            divMain.style.top= "50%";
+            divMain.style.border ="2px solid black";
+            divMain.style.left= "50%";
+            divMain.style.margin = "-300px 0 0 -300px";
+
+            for(let j=1;j<=n*n;j++){
+                const div = document.createElement('div');
+                div.classList.add('child');
+                divMain.appendChild(div);
+                }
+            
+            let colors = ["#000","#111","#222","#333","#444","#555","#666","#777","#888","#999"];
+            for(let k=0;k<colors.length;k++){
+                newColor = colors[k];
+            }
+            let divs = document.querySelectorAll('.child');
+                divs.forEach((div)=> {
+                    div.addEventListener('mouseover',function() {
+                        div.style.backgroundColor = newColor;
+                    })                 
+                })
+            
+            const button = document.querySelector('button');
+                button.addEventListener('click',function(){
+                    const children = document.querySelectorAll(".child");
+                        children.forEach((div) => {
+                    div.style.backgroundColor = "white";
+                    })
+                });
+    </script>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        button{
+            position: absolute;
+            left: 50%;
+            width: 100px;
+            height: 100px;
+            margin-left: -50px;
+            top: 5%;
+            font-size: large;
+        }
+    </style>
+    <body>
+        <button>Clear <br>Screen</button>
+        <div id="grid"></div>
+    </body>
+    <script>
+        let n=prompt("Enter the number of row and columns required", "");
+        let rowsAndColumns = "";
+    
+            for(let i=1;i<=n;i++){
+                rowsAndColumns = "repeat("+i+",auto)";
+            }
+    
+            const divMain = document.querySelector("#grid");
+            divMain.style.display="grid";
+            divMain.style.gridTemplateRows = rowsAndColumns;
+            divMain.style.gridTemplateColumns = rowsAndColumns;
+            divMain.style.position="absolute";
+            divMain.style.height = "600px";
+            divMain.style.width = "600px";
+            divMain.style.top= "50%";
+            divMain.style.border ="2px solid black";
+            divMain.style.left= "50%";
+            divMain.style.margin = "-300px 0 0 -300px";
+
+            for(let j=1;j<=n*n;j++){
+                const div = document.createElement('div');
+                div.classList.add('child');
+                divMain.appendChild(div);
+                }
+
+            let divs = document.querySelectorAll('.child');
+                divs.forEach((div)=> {
+                    div.addEventListener('mouseover',function() {
+                        let colors =   ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
+                                        '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
+                                        '#80B300', '#809900', '#E6B3B3', '#6680B3', '#66991A', 
+                                        '#FF99E6', '#CCFF1A', '#FF1A66', '#E6331A', '#33FFCC',
+                                        '#66994D', '#B366CC', '#4D8000', '#B33300', '#CC80CC', 
+                                        '#66664D', '#991AFF', '#E666FF', '#4DB3FF', '#1AB399',
+                                        '#E666B3', '#33991A', '#CC9999', '#B3B31A', '#00E680', 
+                                        '#4D8066', '#809980', '#E6FF80', '#1AFF33', '#999933',
+                                        '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3', 
+                                        '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'];
+                        div.style.backgroundColor = colors[Math.floor(Math.random()*colors.length)];
+                    })                 
+                })
+            
+            const button = document.querySelector('button');
+                button.addEventListener('click',function(){
+                    const children = document.querySelectorAll(".child");
+                        children.forEach((div) => {
+                    div.style.backgroundColor = "white";
+                    })
+                });
+    </script>
+</html>
