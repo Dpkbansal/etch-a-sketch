@@ -1,0 +1,18 @@
+html{
+    font-size: 10px;
+}
+
+#buttons{
+    display:flex;
+    justify-content: center;
+    align-content: flex-end;
+    height: 15vh;
+    margin-bottom: 5vh;
+}
+
+button{
+    width: 10vw;
+    height: 10vh;
+    font-size: 2rem;
+    margin : auto 1rem 1rem 1rem;
+}
