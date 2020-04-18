@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
     <style>
+        html{
+            font-size: 10px;
+        }
         #buttons{
             display:flex;
             justify-content: center;
             align-content: flex-end;
-            height: 150px;
+            height: 15vh;
+            margin-bottom: 5vh;
         }
         button{
-            width: 120px;
-            height: 100px;
-            font-size: large;
-            margin : auto 10px 10px 10px;
+            width: 10vw;
+            height: 10vh;
+            font-size: 2rem;
+            margin : auto 1rem 1rem 1rem;
         }
     </style>
     <body>
@@ -31,12 +35,11 @@
             divMain.style.gridTemplateRows = rowsAndColumns;
             divMain.style.gridTemplateColumns = rowsAndColumns;
             divMain.style.position="absolute";
-            divMain.style.height = "600px";
-            divMain.style.width = "600px";
-            divMain.style.top= "50%";
+            divMain.style.height = "60vh";
+            divMain.style.width = "30vw";
             divMain.style.border ="2px solid black";
-            divMain.style.left= "50%";
-            divMain.style.margin = "-300px 0 0 -300px";
+            divMain.style.left= "50vw";
+            divMain.style.margin = "auto auto auto -15vw";
 
             for(let j=1;j<=n*n;j++){
                 const div = document.createElement('div');
